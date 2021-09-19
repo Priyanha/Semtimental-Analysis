@@ -1,7 +1,6 @@
 import os
 from flask import Flask, render_template, request,jsonify
-import pickle
-from PIL import Image   
+import pickle  
 import numpy as np
 
 app = Flask(__name__)
