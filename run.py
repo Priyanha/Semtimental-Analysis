@@ -5,7 +5,7 @@ import numpy as np
 
 app = Flask(__name__)
 
-MODEL_LABELS = ['0', '1']
+MODEL_LABELS = ['Negative', 'Positive']
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
@@ -43,7 +43,7 @@ def predict():
     # Retrieve the emotion that is associated with the predicted class
     result = MODEL_LABELS[prediction[0]]
     # Create and send a response to the API caller
-    return jsonify(result=result)
+    return jsonify(description=description, result=result)
 
 if __name__ == '__main__':
     app.run(debug=True)
